@@ -2,7 +2,8 @@
 Track our weekly poker sessions results
 
 ## install all requirements
-```virtualenv venv
+```
+virtualenv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
