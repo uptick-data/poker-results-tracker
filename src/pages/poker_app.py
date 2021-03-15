@@ -27,6 +27,9 @@ def write():
     # user input venue
     user_input_venue = st.text_input("Location of game:", value="Loon", key="2")
 
+    # user input venue
+    input_num_hands = st.number_input("Number of hands played:", min_value=0, value=50, key="16")
+
     # ben
     input_result_ben = st.number_input(
         "Input Ben's result", min_value=-5000.0, value=0.0, key="3"
@@ -116,8 +119,9 @@ def write():
         pd.DataFrame({"user_name": settings.list_user_names, "result": list_results})
         .pipe(lambda x: x.assign(date=pd.to_datetime(user_input_date)))
         .pipe(lambda x: x.assign(place=user_input_venue))
-        .pipe(lambda x: x.assign(year=x.date.dt.year))[
-            ["date", "year", "place", "user_name", "result"]
+        .pipe(lambda x: x.assign(year=x.date.dt.year))
+        .pipe(lambda x:x.assign(num_hands=input_num_hands))[
+            ["date", "year", "place", "user_name", "result", "num_hands"]
         ]
     )
 
@@ -132,12 +136,14 @@ def write():
         .sort_values(["date", "user_name"])
         .drop_duplicates()
         .groupby(["date", "year", "place", "user_name"])
-        .agg({"result": "sum"})
+        .agg({"result": "sum", "num_hands":"max"})
         .reset_index()
     )
 
     # write final file to dropbox
     write_csv_file(settings.master_file_directory, settings.master_file, new_master_df)
+
+    # revert back to previous version
 
     st.write(new_master_df)
 

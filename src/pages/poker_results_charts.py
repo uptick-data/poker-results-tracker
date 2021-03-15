@@ -51,15 +51,16 @@ def write():
         df
         .query("result != 0")
         .groupby(["user_name"])
-        .agg({"result": "sum", "date": "nunique", "is_win": "sum"})
+        .agg({"result": "sum", "date": "nunique", "is_win": "sum", "num_hands":"sum"})
         .reset_index()
         .pipe(lambda x: x.assign(avg_per_session=x.result / x.date))
         .rename(columns={"date": "num_sessions"})
         .sort_values(["result", "avg_per_session"], ascending=False)
         .reset_index(drop=True)
+        .pipe(lambda x:x.assign(bb_per_100_hands = 100 * x.result/x.num_hands))
         .pipe(lambda x:x.assign(win_rate = x.is_win/x.num_sessions))
         .drop(['is_win'], 1)
-        [['user_name', 'result', 'num_sessions', 'win_rate', 'avg_per_session']]
+        [['user_name', 'result', 'num_sessions', 'win_rate', 'avg_per_session','num_hands', 'bb_per_100_hands']]
     )
 
     # get total number of sessions
