@@ -62,42 +62,42 @@ def write():
 
     # yuheng
     input_result_yuheng = st.number_input(
-        "Input Yuheng's result", min_value=-5000.0, value=0.0, key="8"
+        "Input Yuheng's result", min_value=-5000.0, value=0.0, key="9"
     )
 
     # KA
     input_result_ka = st.number_input(
-        "Input Uncle KA's result", min_value=-5000.0, value=0.0, key="9"
+        "Input Uncle KA's result", min_value=-5000.0, value=0.0, key="10"
     )
 
     # russell
     input_result_russ = st.number_input(
-        "Input Russ's result", min_value=-5000.0, value=0.0, key="10"
+        "Input Russ's result", min_value=-5000.0, value=0.0, key="11"
     )
 
     # yj
     input_result_yj = st.number_input(
-        "Input Uncle YJ's result", min_value=-5000.0, value=0.0, key="11"
+        "Input Uncle YJ's result", min_value=-5000.0, value=0.0, key="12"
     )
 
     # leo
     input_result_leo = st.number_input(
-        "Input Leo's result", min_value=-5000.0, value=0.0, key="12"
+        "Input Leo's result", min_value=-5000.0, value=0.0, key="13"
     )
 
     # kc
     input_result_kc = st.number_input(
-        "Input Uncle KC's result", min_value=-5000.0, value=0.0, key="13"
+        "Input Uncle KC's result", min_value=-5000.0, value=0.0, key="14"
     )
 
     # francis
     input_result_francis = st.number_input(
-        "Input Uncle Francis's result", min_value=-5000.0, value=0.0, key="14"
+        "Input Uncle Francis's result", min_value=-5000.0, value=0.0, key="15"
     )
 
     # tushit
     input_result_tushit = st.number_input(
-        "Input Tushit's result", min_value=-5000.0, value=0.0, key="15"
+        "Input Tushit's result", min_value=-5000.0, value=0.0, key="16"
     )
 
     results, results_string, list_results = sum_checker(
