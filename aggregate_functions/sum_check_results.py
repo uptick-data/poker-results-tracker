@@ -13,7 +13,7 @@ def sum_checker(
         input_result_seb + input_result_shuming +input_result_yopo +
         input_result_yuheng + input_result_weisheng + input_result_ka + input_result_yj +
         input_result_leo + input_result_kc + input_result_francis +
-        input_result_tushit + input_result_russ + input_result_pinshun,
+        input_result_tushit + input_result_russ + input_result_pinshun
     )
 
     return_string = "nothing wrong, no need for recount"
