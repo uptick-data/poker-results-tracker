@@ -64,6 +64,11 @@ def write():
     input_result_yuheng = st.number_input(
         "Input Yuheng's result", min_value=-5000.0, value=0.0, key="9"
     )
+    
+    # weisheng
+    input_result_weisheng = st.number_input(
+        "Input WeiSheng's result", min_value=-5000.0, value=0.0, key="18"
+    )
 
     # KA
     input_result_ka = st.number_input(
@@ -108,6 +113,7 @@ def write():
         input_result_shuming,
         input_result_yopo,
         input_result_yuheng,
+        input_result_weisheng,
         input_result_ka,
         input_result_yj,
         input_result_leo,
