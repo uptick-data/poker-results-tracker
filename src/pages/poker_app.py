@@ -99,6 +99,11 @@ def write():
     input_result_francis = st.number_input(
         "Input Uncle Francis's result", min_value=-5000.0, value=0.0, key="15"
     )
+    
+    # pinshun
+    input_result_pinshun = st.number_input(
+        "Input PinShun's result", min_value=-5000.0, value=0.0, key="20"
+    )
 
     # tushit
     input_result_tushit = st.number_input(
@@ -121,6 +126,7 @@ def write():
         input_result_francis,
         input_result_tushit,
         input_result_russ,
+        input_result_pinshun,
     )
 
     st.write("net balance of wins and losses: ", results)
