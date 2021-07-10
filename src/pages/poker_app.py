@@ -110,6 +110,11 @@ def write():
         "Input Tushit's result", min_value=-5000.0, value=0.0, key="17"
     )
 
+    # rake
+    input_result_rake = st.number_input(
+        "Input rake's result", min_value=-5000.0, value=0.0, key="21"
+    )
+
     results, results_string, list_results = sum_checker(
         input_result_ben,
         input_result_liang,
@@ -127,6 +132,7 @@ def write():
         input_result_tushit,
         input_result_russ,
         input_result_pinshun,
+        input_result_rake
     )
 
     st.write("net balance of wins and losses: ", results)

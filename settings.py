@@ -14,7 +14,8 @@ list_user_names = [
 	"KC",
 	"Francis",
 	"tushit",
-	"pinshun"
+	"pinshun",
+	"rake"
 ]
 
 # dropbox file directory
